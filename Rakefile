@@ -4,3 +4,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+task "db:rebuild" => ["db:drop", "db:create", "db:migrate", "db:seed"]
+task spec: "db:test:prepare"

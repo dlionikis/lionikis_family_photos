@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    abstract_type (0.0.7)
     actionmailer (4.1.16)
       actionpack (= 4.1.16)
       actionview (= 4.1.16)
@@ -27,8 +28,40 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    adamantium (0.2.0)
+      ice_nine (~> 0.11.0)
+      memoizable (~> 0.4.0)
+    addressable (2.5.0)
+      public_suffix (~> 2.0, >= 2.0.2)
     arel (5.0.1.20140414130214)
+    arrayfields (4.9.2)
+    ast (2.3.0)
+    autoprefixer-rails (6.6.0)
+      execjs
+    bootstrap-sass (3.3.5)
+      autoprefixer-rails (>= 5.0.0.1)
+      sass (>= 3.2.19)
+    bootstrap-switch-rails (3.3.3)
+    brakeman (3.4.1)
     builder (3.2.2)
+    bundler-audit (0.5.0)
+      bundler (~> 1.2)
+      thor (~> 0.18)
+    cane (2.6.2)
+      parallel
+    chronic (0.10.2)
+    churn (0.0.35)
+      chronic (>= 0.2.3)
+      hirb
+      json_pure
+      main
+      rest-client (>= 1.6.0)
+      ruby_parser (~> 3.0)
+      sexp_processor (~> 4.1)
+    code_analyzer (0.4.7)
+      sexp_processor
+    code_metrics (0.1.3)
+    coderay (1.1.1)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -36,10 +69,52 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
+    concord (0.1.5)
+      adamantium (~> 0.2.0)
+      equalizer (~> 0.0.9)
+    diff-lcs (1.2.5)
+    docile (1.1.5)
+    domain_name (0.5.20161129)
+      unf (>= 0.0.5, < 1.0.0)
+    equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
+    fattr (2.3.0)
+    flay (2.8.1)
+      erubis (~> 2.7.0)
+      path_expander (~> 1.0)
+      ruby_parser (~> 3.0)
+      sexp_processor (~> 4.0)
+    flog (4.4.0)
+      path_expander (~> 1.0)
+      ruby_parser (~> 3.1, > 3.1.0)
+      sexp_processor (~> 4.4)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
+    haml (4.0.7)
+      tilt
+    haml-rails (0.9.0)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
+      railties (>= 4.0.1)
     hike (1.2.3)
+    hirb (0.7.3)
+    html2haml (2.0.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0.0)
+      nokogiri (~> 1.6.0)
+      ruby_parser (~> 3.5)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.7.0)
+    ice_nine (0.11.2)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
@@ -47,13 +122,68 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    json_pure (2.0.2)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    main (6.2.1)
+      arrayfields (~> 4.7, >= 4.7.4)
+      chronic (~> 0.6, >= 0.6.2)
+      fattr (~> 2.2, >= 2.2.0)
+      map (~> 6.1, >= 6.1.0)
+    map (6.6.0)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
+    method_source (0.8.2)
+    metric_fu (4.12.0)
+      cane (~> 2.5, >= 2.5.2)
+      churn (~> 0.0.35)
+      code_metrics (~> 0.1)
+      coderay
+      flay (~> 2.1, >= 2.0.1)
+      flog (~> 4.1, >= 4.1.1)
+      launchy (~> 2.0)
+      metric_fu-Saikuro (~> 1.1, >= 1.1.3)
+      multi_json
+      rails_best_practices (~> 1.14, >= 1.14.3)
+      redcard
+      reek (>= 1.3.4, < 3.0)
+      roodi (~> 3.1)
+    metric_fu-Saikuro (1.1.3)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
+    mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    netrc (0.11.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
+    parallel (1.10.0)
+    parser (2.3.3.1)
+      ast (~> 2.2)
+    path_expander (1.0.1)
+    pg (0.19.0)
+    pg_saurus (2.6.0)
+      activemodel (~> 4.0, < 4.2)
+      activerecord (~> 4.0, < 4.2)
+      activesupport (~> 4.0, < 4.2)
+      pg
+      railties (~> 4.0, < 4.2)
+    power_enum (2.9.1)
+      rails (~> 4.0)
+    procto (0.0.3)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-doc (0.9.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
+    public_suffix (2.0.4)
     rack (1.5.5)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -67,13 +197,55 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.16)
       sprockets-rails (~> 2.0)
+    rails_best_practices (1.17.0)
+      activesupport
+      code_analyzer (>= 0.4.3)
+      erubis
+      i18n
+      json
+      require_all
+      ruby-progressbar
     railties (4.1.16)
       actionpack (= 4.1.16)
       activesupport (= 4.1.16)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
+    rainbow (2.1.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    redcard (1.1.0)
+    redcarpet (3.3.4)
+    reek (2.2.1)
+      parser (~> 2.2)
+      rainbow (~> 2.0)
+      unparser (~> 0.2.2)
+    require_all (1.3.3)
+    rest-client (2.0.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    roodi (3.3.1)
+      ruby_parser (~> 3.2, >= 3.2.2)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
+    ruby-progressbar (1.8.1)
+    ruby_parser (3.8.3)
+      sexp_processor (~> 4.1)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -83,6 +255,16 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sexp_processor (4.7.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+    simplecov (0.12.0)
+      docile (~> 1.1.0)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.0)
+    simplecov-rcov-text (0.0.3)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (2.12.4)
       hike (~> 1.2)
@@ -93,7 +275,6 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
-    sqlite3 (1.3.12)
     thor (0.19.4)
     thread_safe (0.3.5)
     tilt (1.4.1)
@@ -104,21 +285,52 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    unparser (0.2.5)
+      abstract_type (~> 0.0.7)
+      adamantium (~> 0.2.0)
+      concord (~> 0.1.5)
+      diff-lcs (~> 1.2.5)
+      equalizer (~> 0.0.9)
+      parser (~> 2.3.0)
+      procto (~> 0.0.2)
+    yard (0.9.5)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
+  bootstrap-switch-rails
+  brakeman
+  bundler-audit
   coffee-rails (~> 4.0.0)
+  factory_girl_rails
+  font-awesome-sass
+  haml-rails
   jbuilder (~> 2.0)
   jquery-rails
+  metric_fu
+  pg
+  pg_saurus (> 2.4)
+  power_enum (~> 2.0)
+  pry
+  pry-doc
+  pry-nav
   rails (= 4.1.16)
+  redcarpet
+  rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  shoulda-matchers
+  simplecov
+  simplecov-rcov-text
   spring
-  sqlite3
   turbolinks
   uglifier (>= 1.3.0)
+  yard
 
 BUNDLED WITH
    1.13.6

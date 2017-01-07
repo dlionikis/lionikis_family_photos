@@ -1,4 +1,6 @@
 class Picture < ActiveRecord::Base
-  validates_presence_of :file_name, :file_path
 
+  def display_path
+    "pictures#{file_path}/#{file_name}"
+  end
 end

@@ -2,7 +2,7 @@ require "pry"
 desc "Import images into the Pictures table"
 task :import_images => :environment do
 
-  dir_path = "public/images"
+  dir_path = "app/assets/images/pictures"
   file_list = Dir.glob("#{dir_path}/**/*")
 
   file_list.each do |full_file_path|
@@ -14,7 +14,7 @@ task :import_images => :environment do
       puts "filename or pathname is nil - path: #{file_path} -> name: #{file_name}"
     else
       Picture.create!(
-          file_path: file_path,
+          file_path: file_path.gsub(dir_path,""),
           file_name: file_name
       	)
     end

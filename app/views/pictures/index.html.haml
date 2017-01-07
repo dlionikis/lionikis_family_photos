@@ -1,3 +1,24 @@
-%h1 Hello, Rails!
-%h2 Pictures#index
-%p Find me in app/views/pictures/index.html.haml
+%h1 Listing pictures
+
+%table
+  %thead
+    %tr
+      %th Info
+      %th Image
+
+  - @pictures.each do |picture|
+    %tr
+      %td
+        %ul
+          %li #{picture.file_path}
+          %li #{picture.file_name}
+          %li
+            =link_to 'Show', picture
+          %li
+            =link_to 'Edit', edit_picture_path(picture)
+          %li
+            =link_to 'Destroy', picture, :method => :delete, :data => { :confirm => 'Are you sure?' }
+          %li
+            = link_to 'New Picture', new_picture_path
+
+      %td= image_tag "#{picture.display_path}", width: "600"

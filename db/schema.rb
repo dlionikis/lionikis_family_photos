@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161225170916) do
+ActiveRecord::Schema.define(version: 20161225193016) do
 
 
 
@@ -19,15 +19,15 @@ ActiveRecord::Schema.define(version: 20161225170916) do
   enable_extension "plpgsql"
 
   create_table "pictures", force: true do |t|
-    t.string   "file_name",  null: false
+    t.string   "file_name"
     t.string   "file_path"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tags", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "type",       null: false
+    t.string   "name"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

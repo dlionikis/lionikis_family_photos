@@ -1,5 +1,22 @@
 require 'rails_helper'
 
-RSpec.describe "tags/index.html.haml", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "tags/index", type: :view do
+  before(:each) do
+    assign(:tags, [
+      Tag.create!(
+        :name => "Name",
+        :type => "Type"
+      ),
+      Tag.create!(
+        :name => "Name",
+        :type => "Type"
+      )
+    ])
+  end
+
+  it "renders a list of tags" do
+    render
+    assert_select "tr>td", :text => "Name".to_s, :count => 2
+    assert_select "tr>td", :text => "Type".to_s, :count => 2
+  end
 end

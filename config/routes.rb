@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :pictures
+  resources :tags
   resources :pictures do
     get 'home/index'
   end
